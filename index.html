@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Елизавета Аксенова — портфолио</title>
+
+<style>
+
+:root {
+
+    --green: #30451f;
+    --green-dark: #263918;
+
+    --black: #11110e;
+
+    --paper: #ffffff;
+
+    --circle-light: #e7e7dc;
+
+    --leaf: #d9ddd5;
+
+    --serif:
+        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background: var(--paper);
+
+    color: var(--green);
+
+    font-family: var(--serif);
+
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+.page {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+.page-right-line {
+
+    position: absolute;
+
+    top: 0;
+    right: 18px;
+
+    width: 1px;
+    height: 100%;
+
+    background: var(--black);
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+.corner-square {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 19px;
+    height: 22px;
+
+    background: var(--green);
+
+    z-index: 40;
+}
+
+.green-strip {
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 130px;
+    height: 467px;
+
+    background-image: url("assets/wood.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+.circle {
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    left: 132px;
+    top: 22px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 38% 33%,
+            #ffffff 0%,
+            #f2f2ec 50%,
+            #dfdfd4 100%
+        );
+
+    z-index: 2;
+}
+
+.botanical {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    opacity: .55;
+}
+
+.botanical.top {
+
+    width: 170px;
+
+    right: -5px;
+
+    top: -5px;
+}
+
+.botanical.middle {
+
+    width: 220px;
+
+    right: -20px;
+
+    top: 390px;
+
+    opacity: .38;
+}
+
+.botanical.bottom {
+
+    width: 180px;
+
+    left: -55px;
+
+    bottom: -10px;
+
+    opacity: .48;
+}
+
+.photo-frame {
+
+    position: absolute;
+
+    z-index: 8;
+
+    left: 55px;
+    top: 96px;
+
+    width: 286px;
+    height: 371px;
+}
+
+.photo-frame img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.photo-frame::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 35px;
+    top: -27px;
+
+    width: 285px;
+    height: 368px;
+
+    border: 1px solid var(--black);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.photo-line {
+
+    position: absolute;
+
+    left: 348px;
+
+    top: 245px;
+
+    width: 1px;
+
+    height: 361px;
+
+    background: var(--black);
+
+    z-index: 9;
+}
+
+.photo-bottom-line {
+
+    position: absolute;
+
+    left: 56px;
+
+    top: 473px;
+
+    width: 325px;
+
+    height: 1px;
+
+    background: var(--black);
+
+    z-index: 9;
+}
+
+.name {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 54px;
+
+    top: 482px;
+
+    width: 310px;
+
+    color: var(--green);
+}
+
+.name-last {
+
+    display: block;
+
+    font-size: 29px;
+
+    line-height: .95;
+
+    letter-spacing: -.01em;
+}
+
+.name-first
+
+
+{
+
+    display: block;
+
+    font-size: 47px;
+
+    line-height: .91;
+
+    letter-spacing: -.035em;
+
+    white-space: nowrap;
+}
+
+.name-middle {
+
+    display: block;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.links {
+
+    position: absolute;
+
+    top: 27px;
+    right: 54px;
+
+    z-index: 50;
+}
+
+.links-button {
+
+    border: 0;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: transparent;
+
+    color: var(--green);
+
+    cursor: pointer;
+
+    font-size: 23px;
+
+    line-height: 1;
+}
+
+.links-button:hover {
+
+    text-decoration: underline;
+}
+
+.links-menu {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 31px;
+
+    width: 205px;
+
+    padding: 15px 18px;
+
+    background: rgba(255,255,255,.98);
+
+    border: 1px solid var(--black);
+
+    display: none;
+}
+
+.links-menu.open {
+
+    display: block;
+}
+
+.links-menu a {
+
+    display: block;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #d4d7cf;
+
+    color: var(--green);
+
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+.links-menu a:last-child {
+
+    border-bottom: 0;
+}
+
+.links-menu a:hover {
+
+    text-decoration: underline;
+}
+
+.intro {
+
+    position: absolute;
+
+    left: 65px;
+    top: 631px;
+
+    width: 479px;
+    height: 103px;
+
+    border: 1px solid var(--black);
+
+    z-index: 10;
+
+    background: rgba(255,255,255,.55);
+
+    padding: 15px 20px;
+}
+
+.intro h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.works {
+
+    position: absolute;
+
+    left: 65px;
+    top: 766px;
+
+    width: 479px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 123px);
+
+    justify-content: space-between;
+
+z-index: 10;
+}
+
+.work-card {
+
+    width: 123px;
+    height: 103px;
+
+    padding: 4px;
+
+    background: white;
+
+    border: 1px solid var(--black);
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.work-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(0,0,0,.13);
+}
+
+.work-card img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.more {
+
+    position: absolute;
+
+    right: 31px;
+
+    top: 882px;
+
+    color: var(--green);
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    z-index: 10;
+
+    text-decoration: none;
+}
+
+.more:hover {
+
+    text-decoration: underline;
+}
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(17,21,14,.94);
+
+    padding: 30px;
+}
+
+.lightbox.open {
+
+    display: flex;
+}
+
+.lightbox img {
+
+    max-width: 92vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.close {
+
+    position: absolute;
+
+    top: 15px;
+    right: 22px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+
+    .page {
+
+        min-height: 100vh;
+
+        width: 100%;
+
+        aspect-ratio: 607 / 908;
+    }
+
+    .green-strip {
+
+        width: 21.42vw;
+        height: 51.7vw;
+    }
+
+    .circle {
+
+        width: 56%;
+
+        height: auto;
+
+        aspect-ratio: 1;
+
+        left: 21.8%;
+
+        top: 2.4%;
+    }
+
+    .photo-frame {
+
+        left: 9.1%;
+
+        top: 10.6%;
+
+        width: 47.1%;
+
+        height: auto;
+
+        aspect-ratio: 286 / 371;
+    }
+
+    .photo-frame::before {
+
+        left: 0;
+
+        top: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        border: 1px solid var(--black);
+    }
+
+    .photo-line {
+
+        left: 57.3%;
+
+        top: 27%;
+
+        height: 40%;
+    }
+
+    .photo-bottom-line {
+
+        left: 9.2%;
+
+        top: 52.1%;
+
+        width: 53.5%;
+    }
+
+    .name {
+
+        left: 8.9%;
+
+        top: 53%;
+
+        width: 55%;
+    }
+
+    .name-last {
+
+        font-size: 4.7vw;
+    }
+
+    .name-first {
+
+        font-size: 7.7vw;
+
+
+}
+
+    .name-middle {
+
+        font-size: 4.7vw;
+    }
+
+    .links {
+
+        top: 3%;
+
+        right: 8.7%;
+    }
+
+    .links-button {
+
+        font-size: 3.8vw;
+    }
+
+    .links-menu {
+
+        top: 5vw;
+
+        width: 180px;
+    }
+
+    .links-menu a {
+
+        font-size: 16px;
+    }
+
+    .intro {
+
+        left: 10.7%;
+
+        top: 69.5%;
+
+        width: 78.9%;
+
+        height: 11.3%;
+
+        padding: 2.2% 4%;
+    }
+
+    .intro h1 {
+
+        font-size: 4vw;
+    }
+
+    .works {
+
+        left: 10.7%;
+
+        top: 84.4%;
+
+        width: 78.9%;
+
+        grid-template-columns:
+            repeat(3, 25.7%);
+
+        justify-content: space-between;
+    }
+
+    .work-card {
+
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 123 / 103;
+
+        padding: 3px;
+    }
+
+    .more {
+
+        right: 5.2%;
+
+        top: 97.1%;
+
+        font-size: 3.4vw;
+    }
+
+    .page-right-line {
+
+        right: 3%;
+    }
+
+    .corner-square {
+
+        width: 3.1%;
+
+        height: 2.4%;
+    }
+
+    .botanical.top {
+
+        width: 29%;
+
+        right: -1%;
+
+        top: -.5%;
+    }
+
+    .botanical.middle {
+
+        width: 43%;
+
+        right: 3%;
+
+        top: 37%;
+    }
+
+    .botanical.bottom {
+
+        width: 30%;
+
+left: -9%;
+
+        bottom: -1%;
+    }
+}
+
+@media (min-width: 651px) {
+
+    .page {
+
+        width: 607px;
+
+        min-height: 908px;
+
+        margin: 0 auto;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="green-strip"></div>
+
+    <div class="circle"></div>
+
+    <svg
+        class="botanical top"
+        viewBox="0 0 300 260"
+        aria-hidden="true"
+    >
+
+        <g
+            fill="none"
+            stroke="#cbd2c2"
+            stroke-width="2"
+        >
+
+            <path
+                d="
+                M20 250
+                C95 170
+                150 110
+                275 20
+                "
+            />
+
+            <path
+                d="
+                M75 190
+                C65 165
+                53 147
+                35 134
+                "
+            />
+
+            <path
+                d="
+                M99 165
+                C104 135
+                106 112
+                101 91
+                "
+            />
+
+            <path
+                d="
+                M132 138
+                C153 115
+                168 95
+                178 72
+                "
+            />
+
+            <path
+                d="
+                M168 111
+                C195 100
+                215 86
+                229 66
+                "
+            />
+
+            <path
+                d="
+                M204 84
+                C225 73
+                244 54
+                254 35
+                "
+            />
+
+            <ellipse
+                cx="44"
+                cy="132"
+                rx="10"
+                ry="28"
+                transform="rotate(-48 44 132)"
+            />
+
+            <ellipse
+                cx="101"
+                cy="90"
+                rx="10"
+                ry="28"
+                transform="rotate(5 101 90)"
+            />
+
+            <ellipse
+                cx="178"
+                cy="72"
+                rx="10"
+                ry="29"
+                transform="rotate(39 178 72)"
+            />
+
+            <ellipse
+                cx="229"
+                cy="66"
+                rx="10"
+                ry="28"
+                transform="rotate(55 229 66)"
+            />
+
+            <ellipse
+                cx="254"
+                cy="35"
+                rx="8"
+                ry="23"
+                transform="rotate(48 254 35)"
+            />
+
+        </g>
+
+    </svg>
+
+    <svg
+        class="botanical middle"
+        viewBox="0 0 360 300"
+        aria-hidden="true"
+    >
+
+        <g
+            fill="none"
+            stroke="#cbd2c2"
+            stroke-width="3"
+        >
+
+            <path
+                d="
+                M15 280
+                C85 205
+                170 155
+                345 15
+                "
+            />
+
+            <path
+                d="
+                M73 226
+                C58 199
+                42 182
+                20 173
+                "
+            />
+
+            <path
+                d="
+                M112 195
+                C112 165
+                109 141
+                100 119
+                "
+            />
+
+            <path
+                d="
+                M157 164
+                C180 139
+                198 116
+                209 89
+                "
+            />
+
+            <path
+                d="
+                M207 124
+                C235 113
+                259 94
+                277 72
+                "
+            />
+
+            <path
+                d="
+                M255 86
+                C279 72
+                300 52
+                316 31
+                "
+            />
+
+            <ellipse
+                cx="27"
+                cy="173"
+                rx="11"
+                ry="31"
+                transform="rotate(-52 27 173)"
+            />
+
+            <ellipse
+                cx="100"
+                cy="119"
+                rx="11"
+                ry="32"
+                transform="rotate(-5 100 119)"
+            />
+
+            <ellipse
+                cx="209"
+                cy="89"
+                rx="11"
+                ry="32"
+                transform="rotate(35 209 89)"
+            />
+
+            <ellipse
+                cx="277"
+                cy="72"
+                rx="11"
+                ry="32"
+                transform="rotate(50 277 72)"
+            />
+
+        </g>
+
+    </svg>
+
+    <svg
+        class="botanical bottom"
+        viewBox="0 0 270 220"
+        aria-hidden="true"
+    >
+
+        <g
+            fill="none"
+            stroke="#cbd2c2"
+            stroke-width="2"
+        >
+
+            <path
+                d="
+                M5 210
+                C70 150
+                125 110
+                260 20
+                "
+            />
+
+            <path
+                d="
+                M54 169
+                C47 146
+                38 128
+                20 117
+                "
+            />
+
+            <path
+                d="
+                M93 140
+                C95 115
+                92 95
+                85 78
+                "
+            />
+
+            <path
+                d="
+                M132 113
+                C151 95
+                166 76
+                174 56
+                "
+            />
+
+            <path
+                d="
+                M174 85
+                C194 77
+                214 64
+                227 47
+                "
+            />
+
+            <ellipse
+                cx="21"
+                cy="117"
+                rx="9"
+                ry="25"
+                transform="rotate(-47 21 117)"
+            />
+
+            <ellipse
+                cx="85"
+                cy="78"
+                rx="9"
+                ry="25"
+            />
+
+            <ellipse
+                cx="174"
+                cy="56"
+                rx="9"
+                ry="25"
+                transform="rotate(35 174 56)"
+            />
+
+            <ellipse
+                cx="227"
+                cy="47"
+                rx="8"
+                ry="22"
+                transform="rotate(48 227 47)"
+            />
+
+        </g>
+
+    </svg>
+
+    <div class="photo-frame">
+
+        <img
+            src="assets/portrait.webp"
+            alt="Елизавета Аксенова"
+        >
+
+    </div>
+
+    <div class="photo-line"></div>
+
+    <div class="photo-bottom-line"></div>
+
+    <div class="name">
+
+        <span class="name-last">
+            АКСЕНОВА
+        </span>
+
+        <span class="name-first">
+            ЕЛИЗАВЕТА
+        </span>
+
+        <span class="name-middle">
+            ВЛАДИМИРОВНА
+        </span>
+
+    </div>
+
+    <nav class="links">
+
+        <button
+            class="links-button"
+
+id="linksButton"
+            type="button"
+        >
+            ССЫЛКИ
+        </button>
+
+        <div
+
+
+class="links-menu"
+            id="linksMenu"
+        >
+
+            <a
+                href="https://t.me/Lizochek20063"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Telegram
+            </a>
+
+            <a
+                href="https://vk.ru/lizochek_a"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                VK
+            </a>
+
+            <a
+                href="https://www.instagram.com/elizabeth_htown_?stkn=MWZlaGxjbHp4a2w5Mw=="
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+            <a
+            >
+                89268603374
+            </a>
+
+        </div>
+
+    </nav>
+
+    <section class="intro">
+
+        <h1>
+            ПРИВЕТ! Я ХУДОЖНИК, И ЭТО МОЯ КАРМАННАЯ ГАЛЕРЕЯ.
+        </h1>
+
+    </section>
+
+    <section class="works">
+
+        <button
+            class="work-card"
+            type="button"
+            data-full="assets/work-1.webp"
+        >
+
+            <img
+                src="assets/work-1.webp"
+                alt="Работа 1"
+            >
+
+        </button>
+
+        <button
+            class="work-card"
+            type="button"
+            data-full="assets/work-2.webp"
+        >
+
+            <img
+                src="assets/work-2.webp"
+                alt="Работа 2"
+            >
+
+        </button>
+
+        <button
+            class="work-card"
+            type="button"
+            data-full="assets/work-3.webp"
+        >
+
+            <img
+                src="assets/work-3.webp"
+                alt="Работа 3"
+            >
+
+        </button>
+
+    </section>
+
+    <a
+        class="more"
+        href="works.html"
+    >
+        БОЛЬШЕ РАБОТ ЗДЕСЬ
+    </a>
+
+    <div class="page-right-line"></div>
+
+    <div class="corner-square"></div>
+
+</div>
+
+<div
+    class="lightbox"
+    id="lightbox"
+>
+
+    <button
+        class="close"
+        id="closeLightbox"
+        type="button"
+        aria-label="Закрыть"
+    >
+        ×
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+</div>
+
+<script>
+
+const linksButton =
+    document.getElementById("linksButton");
+
+const linksMenu =
+    document.getElementById("linksMenu");
+
+linksButton.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        linksMenu.classList.toggle("open");
+
+    }
+);
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            !linksMenu.contains(event.target)
+            &&
+            event.target !== linksButton
+        ) {
+
+            linksMenu.classList.remove("open");
+
+        }
+
+    }
+);
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const closeLightboxButton =
+    document.getElementById("closeLightbox");
+
+const workCards =
+    document.querySelectorAll(".work-card");
+
+workCards.forEach(
+    function(card) {
+
+        card.addEventListener(
+            "click",
+            function() {
+
+                const image =
+                    card.getAttribute("data-full");
+
+                lightboxImage.src =
+                    image;
+
+                lightbox.classList.add("open");
+
+                document.body.style.overflow =
+                    "hidden";
+
+            }
+        );
+
+    }
+);
+
+function closeLightbox() {
+
+    lightbox.classList.remove("open");
+
+    lightboxImage.src = "";
+
+    document.body.style.overflow = "";
+
+}
+
+closeLightboxButton.addEventListener(
+    "click",
+    closeLightbox
+);
+
+lightbox.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === lightbox
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeLightbox();
+
+            linksMenu.classList.remo
+
+
+ve("open");
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

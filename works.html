@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Работы — Елизавета Аксенова</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: #f8f5ec;
+            color: #263619;
+            font-family: Georgia, "Times New Roman", serif;
+            overflow: hidden;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .gallery-section {
+            width: 100%;
+            height: 50vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .gallery-title {
+            height: 34px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            height: calc(50vh - 34px);
+            overflow: hidden;
+        }
+
+        .slides {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 70px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition:
+                transform 0.45s ease,
+                opacity 0.45s ease;
+            pointer-events: none;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .slide.exit-left {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .slide.from-left {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .slide img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 42px;
+            height: 42px;
+            border: none;
+            background: transparent;
+            color: #263619;
+            font-family: Georgia, serif;
+            font-size: 38px;
+            line-height: 38px;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+        }
+
+        .arrow:hover {
+            opacity: 0.55;
+        }
+
+        .arrow.prev {
+            left: 15px;
+        }
+
+        .arrow.next {
+            right: 15px;
+        }
+
+        .counter {
+            position: absolute;
+            right: 18px;
+            bottom: 8px;
+            z-index: 20;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            opacity: 0.6;
+        }
+
+        .gallery-section:first-child {
+            border-bottom: 1px solid rgba(38, 54, 25, 0.35);
+        }
+
+        .back {
+            position: absolute;
+            left: 15px;
+            top: 8px;
+            z-index: 50;
+            color: #263619;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 0.08em
+
+
+;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        .back:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                overflow: hidden;
+            }
+
+            .gallery-section {
+                height: 50vh;
+            }
+
+            .gallery-title {
+                height: 27px;
+                font-size: 12px;
+                letter-spacing: 0.06em;
+            }
+
+            .gallery {
+                height: calc(50vh - 27px);
+            }
+
+            .slide {
+                padding: 5px 48px;
+            }
+
+            .slide img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .arrow {
+                width: 34px;
+                height: 34px;
+                font-size: 31px;
+            }
+
+            .arrow.prev {
+                left: 5px;
+            }
+
+            .arrow.next {
+                right: 5px;
+            }
+
+            .counter {
+                right: 9px;
+                bottom: 5px;
+                font-size: 9px;
+            }
+
+            .back {
+                left: 8px;
+                top: 6px;
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <section class="gallery-section">
+
+        <h1 class="gallery-title">
+            Работы на заказ
+        </h1>
+
+        <div class="gallery" id="commissionGallery">
+
+            <button
+                class="arrow prev"
+                type="button"
+                aria-label="Предыдущая работа"
+            >
+                ‹
+            </button>
+
+            <button
+                class="arrow next"
+                type="button"
+                aria-label="Следующая работа"
+            >
+                ›
+            </button>
+
+            <span class="counter">
+                1 / 3
+            </span>
+
+            <div class="slides">
+
+                <article class="slide active">
+                    <img src="assets/work-1.webp" alt="Работа">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/work-2.webp" alt="Работа">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/work-3.webp" alt="Работа">
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="gallery-section">
+
+        <h1 class="gallery-title">
+            Учебные работы
+        </h1>
+
+        <div class="gallery" id="studyGallery">
+
+            <button
+                class="arrow prev"
+                type="button"
+                aria-label="Предыдущая работа"
+            >
+                ‹
+            </button>
+
+            <button
+                class="arrow next"
+                type="button"
+                aria-label="Следующая работа"
+            >
+                ›
+            </button>
+
+            <span class="counter">
+                1 / 3
+            </span>
+
+            <div class="slides">
+
+                <article class="slide active">
+                    <img src="assets/study-1.webp" alt="Учебная работа">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/study-2.webp" alt="Учебная работа">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/study-3.webp" alt="Учебная работа">
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+function initGallery(galleryId) {
+    const gallery = document.getElementById(galleryId);
+    const slides = gallery.querySelectorAll(".slide");
+    const previousButton = gallery.querySelector(".prev");
+    const nextButton = gallery.querySelector(".next");
+    const counter = gallery.querySelector(".counter");
+
+    let current = 0;
+
+    counter.textContent = (current + 1) + " / " + slides.length;
+
+    function showSlide(nextIndex, direction) {
+        if (nextIndex === current) return;
+
+        const oldSlide = slides[current];
+        const newSlide = slides[nextIndex];
+
+        newSlide.style.transition = "none";
+        newSlide.style.opacity = "0";
+        newSlide.style.transform =
+            direction === "next"
+                ? "translateX(100%)"
+                : "translateX(-100%)";
+
+        void newSlide.offsetWidth;
+
+        newSlide.style.transition =
+            "transform 0.45s ease, opacity 0.45s ease";
+
+        oldSlide.style.transition =
+            "transform 0.45s ease, opacity 0.45s ease";
+
+        newSlide.style.opacity = "1";
+        newSlide.style.transform = "translateX(0)";
+
+        oldSlide.style.opacity = "0";
+        oldSlide.style.transform =
+            direction === "next"
+                ? "translateX(-100%)"
+                : "translateX(100%)";
+
+        newSlide.classList.add("active");
+        oldSlide.classList.remove("active");
+
+        current = nextIndex;
+
+        counter.textContent = (current + 1) + " / " + slides.length;
+
+        window.setTimeout(function () {
+            slides.forEach(function (slide, index) {
+                if (index !== current) {
+                    slide.style.transition = "";
+                    slide.style.transform = "";
+                    slide.style.opacity = "";
+                    slide.classList.remove(
+                        "active",
+                        "exit-left",
+                        "from-left",
+                        "from-right"
+                    );
+                }
+            });
+
+            newSlide.style.transition = "";
+            newSlide.style.transform = "";
+            newSlide.style.opacity = "";
+        }, 500);
+    }
+
+    nextButton.addEventListener("click", function () {
+        const nextIndex = (current + 1) % slides.length;
+        showSlide(nextIndex, "next");
+    });
+
+    previousButton.addEventListener("click", function () {
+        const previousIndex =
+            (current - 1 + slides.length) % slides.length;
+
+        showSlide(previousIndex, "previous");
+    });
+
+    let touchStartX = 0;
+
+    gallery.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    gallery.addEventListener("touchend", function (event) {
+        const touchEndX = event.changedTouches[0].clientX;
+        const difference = touchStartX - touchEndX;
+
+        if (difference > 50) {
+            const nextIndex = (current + 1) % slides.length;
+            showSlide(nextIndex, "next");
+        } else if (difference < -50) {
+            const previousIndex =
+                (current - 1 + slides.length) % slides.length;
+
+            showSlide(previousIndex, "previous");
+        }
+    }, { passive: true });
+}
+
+initGallery("commissionGallery");
+initGallery("studyGallery");
+</script>
+
+</body>
+</html>
