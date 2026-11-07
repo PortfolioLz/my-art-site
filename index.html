@@ -46,11 +46,8 @@ body {
 body {
 
     background: var(--paper);
-
     color: var(--green);
-
     font-family: var(--serif);
-
     overflow-x: hidden;
 }
 
@@ -62,55 +59,40 @@ a {
 .page {
 
     position: relative;
-
     width: 100%;
-
     min-height: 100vh;
-
     background: white;
-
     overflow: hidden;
 }
 
 .page-right-line {
 
     position: absolute;
-
     top: 0;
     right: 18px;
-
     width: 1px;
     height: 100%;
-
     background: var(--black);
-
     z-index: 30;
-
     pointer-events: none;
 }
 
 .corner-square {
 
     position: absolute;
-
     right: 0;
     bottom: 0;
-
     width: 19px;
     height: 22px;
-
     background: var(--green);
-
     z-index: 40;
 }
 
 .green-strip {
 
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 130px;
     height: 467px;
 
@@ -120,7 +102,6 @@ a {
     background-repeat: no-repeat;
 
     z-index: 1;
-
     overflow: hidden;
 }
 
@@ -128,13 +109,10 @@ a {
 .circle {
 
     position: absolute;
-
     width: 340px;
     height: 340px;
-
     left: 132px;
     top: 22px;
-
     border-radius: 50%;
 
     background:
@@ -152,54 +130,40 @@ a {
 .botanical {
 
     position: absolute;
-
     pointer-events: none;
-
     z-index: 3;
-
     opacity: .55;
 }
 
 .botanical.top {
 
     width: 170px;
-
     right: -5px;
-
     top: -5px;
 }
 
 .botanical.middle {
 
     width: 220px;
-
     right: -20px;
-
     top: 390px;
-
     opacity: .38;
 }
 
 .botanical.bottom {
 
     width: 180px;
-
     left: -55px;
-
     bottom: -10px;
-
     opacity: .48;
 }
 
 .photo-frame {
 
     position: absolute;
-
     z-index: 8;
-
     left: 55px;
     top: 96px;
-
     width: 286px;
     height: 371px;
 }
@@ -207,149 +171,101 @@ a {
 .photo-frame img {
 
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     position: relative;
-
     z-index: 3;
 }
 
 .photo-frame::before {
 
     content: "";
-
     position: absolute;
-
     left: 35px;
     top: -27px;
-
     width: 285px;
     height: 368px;
-
     border: 1px solid var(--black);
-
     z-index: 1;
-
     pointer-events: none;
 }
 
 .photo-line {
 
     position: absolute;
-
     left: 348px;
-
     top: 245px;
-
     width: 1px;
-
     height: 361px;
-
     background: var(--black);
-
     z-index: 9;
 }
 
 .photo-bottom-line {
 
     position: absolute;
-
     left: 56px;
-
     top: 473px;
-
     width: 325px;
-
     height: 1px;
-
     background: var(--black);
-
     z-index: 9;
 }
 
 .name {
 
     position: absolute;
-
     z-index: 10;
-
-    left: 54px;
-
+    left: 17px;
     top: 482px;
-
-    width: 310px;
-
+    width: 330px;
     color: var(--green);
 }
 
-.name-last {
+.name-line {
 
-    display: block;
-
-    font-size: 29px;
-
-    line-height: .95;
-
-    letter-spacing: -.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    white-space: nowrap;
 }
 
-.name-first
+.name-last,
+.name-first {
 
-
-{
-
-    display: block;
-
-    font-size: 47px;
-
-    line-height: .91;
-
-    letter-spacing: -.035em;
-
-    white-space: nowrap;
+    display: inline;
+    font-size: 27px;
+    line-height: 1;
+    letter-spacing: -.02em;
 }
 
 .name-middle {
 
     display: block;
-
-    font-size: 29px;
-
-    line-height: 1;
-
+    font-size: 36px;
+    line-height: .95;
+    letter-spacing: -.035;
     white-space: nowrap;
 }
 
 .links {
 
     position: absolute;
-
     top: 27px;
     right: 54px;
-
     z-index: 50;
 }
 
 .links-button {
 
     border: 0;
-
     padding: 0;
-
     margin: 0;
-
     background: transparent;
-
     color: var(--green);
-
     cursor: pointer;
-
     font-size: 23px;
-
     line-height: 1;
 }
 
@@ -361,19 +277,12 @@ a {
 .links-menu {
 
     position: absolute;
-
     right: 0;
-
     top: 31px;
-
     width: 205px;
-
     padding: 15px 18px;
-
     background: rgba(255,255,255,.98);
-
     border: 1px solid var(--black);
-
     display: none;
 }
 
@@ -385,15 +294,10 @@ a {
 .links-menu a {
 
     display: block;
-
     padding: 8px 0;
-
     border-bottom: 1px solid #d4d7cf;
-
     color: var(--green);
-
     font-size: 18px;
-
     text-decoration: none;
 }
 
@@ -413,62 +317,45 @@ a {
 
     left: 65px;
     top: 631px;
-
     width: 479px;
     height: 103px;
-
     border: 1px solid var(--black);
-
     z-index: 10;
-
     background: rgba(255,255,255,.55);
-
     padding: 15px 20px;
 }
 
 .intro h1 {
 
     margin: 0;
-
     font-size: 25px;
-
     line-height: 1;
-
     font-weight: 400;
 }
 
 .works {
 
     position: absolute;
-
     left: 65px;
     top: 766px;
-
     width: 479px;
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 123px);
 
     justify-content: space-between;
-
-z-index: 10;
+    z-index: 10;
 }
 
 .work-card {
 
     width: 123px;
     height: 103px;
-
     padding: 4px;
-
     background: white;
-
     border: 1px solid var(--black);
-
     cursor: pointer;
-
     transition:
         transform .2s ease,
         box-shadow .2s ease;
@@ -486,31 +373,21 @@ z-index: 10;
 .work-card img {
 
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 .more {
 
     position: absolute;
-
     right: 31px;
-
     top: 882px;
-
     color: var(--green);
-
     font-size: 21px;
-
     line-height: 1;
-
     white-space: nowrap;
-
     z-index: 10;
-
     text-decoration: none;
 }
 
@@ -522,13 +399,9 @@ z-index: 10;
 .lightbox {
 
     position: fixed;
-
     inset: 0;
-
     z-index: 200;
-
     display: none;
-
     align-items: center;
     justify-content: center;
 
@@ -547,10 +420,8 @@ z-index: 10;
 
     max-width: 92vw;
     max-height: 90vh;
-
     width: auto;
     height: auto;
-
     object-fit: contain;
 }
 
@@ -560,21 +431,13 @@ z-index: 10;
 
     top: 15px;
     right: 22px;
-
     padding: 0;
-
     border: 0;
-
     background: transparent;
-
     color: white;
-
     font-family: Arial, sans-serif;
-
     font-size: 42px;
-
     line-height: 1;
-
     cursor: pointer;
 }
 
@@ -583,11 +446,8 @@ z-index: 10;
     .page {
 
         width: 100%;
-
         height: auto;
-
         min-height: 0;
-
         aspect-ratio: 607 / 908;
     }
 
@@ -600,90 +460,66 @@ z-index: 10;
     .circle {
 
         width: 56%;
-
         height: auto;
-
         aspect-ratio: 1;
-
         left: 21.8%;
-
         top: 2.4%;
     }
 
     .photo-frame {
 
         left: 9.1%;
-
         top: 10.6%;
-
         width: 47.1%;
-
         height: auto;
-
         aspect-ratio: 286 / 371;
     }
 
     .photo-frame::before {
 
         left: 0;
-
         top: 0;
-
         width: 100%;
-
         height: 100%;
-
         border: 1px solid var(--black);
     }
 
     .photo-line {
 
         left: 57.3%;
-
         top: 27%;
-
         height: 40%;
     }
 
     .photo-bottom-line {
 
         left: 9.2%;
-
         top: 52.1%;
-
         width: 53.5%;
     }
 
     .name {
 
-        left: 8.9%;
-
+        left: 2.8%;
         top: 53%;
-
-        width: 55%;
+        width: 58%;
     }
 
-    .name-last {
-
-        font-size: 4.7vw;
-    }
-
+    .name-last,
     .name-first {
 
-        font-size: 7.7vw;
+        font-size: 4.4vw;
 
-
-}
+    }
 
     .name-middle {
 
-        font-size: 4.7vw;
+        font-size: 5.9vw;
     }
 
     .links {
 
         top: 3%;
-
         right: 8.7%;
     }
 
@@ -695,7 +531,6 @@ z-index: 10;
     .links-menu {
 
         top: 5vw;
-
         width: 180px;
     }
 
@@ -707,13 +542,9 @@ z-index: 10;
     .intro {
 
         left: 10.7%;
-
         top: 69.5%;
-
         width: 78.9%;
-
         height: 11.3%;
-
         padding: 2.2% 4%;
     }
 
@@ -725,9 +556,7 @@ z-index: 10;
     .works {
 
         left: 10.7%;
-
         top: 84.4%;
-
         width: 78.9%;
 
         grid-template-columns:
@@ -739,20 +568,15 @@ z-index: 10;
     .work-card {
 
         width: 100%;
-
         height: auto;
-
         aspect-ratio: 123 / 103;
-
         padding: 3px;
     }
 
     .more {
 
         right: 5.2%;
-
         top: 97.1%;
-
         font-size: 3.4vw;
     }
 
@@ -764,34 +588,27 @@ z-index: 10;
     .corner-square {
 
         width: 3.1%;
-
         height: 2.4%;
     }
 
     .botanical.top {
 
         width: 29%;
-
         right: -1%;
-
         top: -.5%;
     }
 
     .botanical.middle {
 
         width: 43%;
-
         right: 3%;
-
         top: 37%;
     }
 
     .botanical.bottom {
 
         width: 30%;
-
-left: -9%;
-
+        left: -9%;
         bottom: -1%;
     }
 }
@@ -801,9 +618,7 @@ left: -9%;
     .page {
 
         width: 607px;
-
         min-height: 908px;
-
         margin: 0 auto;
     }
 }
@@ -1139,13 +954,10 @@ left: -9%;
 
     <div class="name">
 
-        <span class="name-last">
-            АКСЕНОВА
-        </span>
-
-        <span class="name-first">
-            ЕЛИЗАВЕТА
-        </span>
+        <div class="name-line">
+            <span class="name-last">АКСЕНОВА</span>
+            <span class="name-first">ЕЛИЗАВЕТА</span>
+        </div>
 
         <span class="name-middle">
             ВЛАДИМИРОВНА
@@ -1259,7 +1071,7 @@ class="links-menu"
         class="more"
         href="works.html"
     >
-        БОЛЬШЕ РАБОТ ЗДЕСЬ
+        БОЛЬШЕ РАБОТ
     </a>
 
     <div class="page-right-line"></div>
@@ -1402,10 +1214,7 @@ document.addEventListener(
 
             closeLightbox();
 
-            linksMenu.classList.remo
-
-
-ve("open");
+            linksMenu.classList.remove("open");
 
         }
 
