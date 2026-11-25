@@ -36,7 +36,7 @@
 
         .gallery-section {
             width: 100%;
-            height: 50vh;
+            height: 33.333vh;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -59,7 +59,7 @@
         .gallery {
             position: relative;
             width: 100%;
-            height: calc(50vh - 34px);
+            height: calc(33.333vh - 34px);
             overflow: hidden;
         }
 
@@ -156,7 +156,7 @@
             opacity: 0.6;
         }
 
-        .gallery-section:first-child {
+        .gallery-section:not(:last-child) {
             border-bottom: 1px solid rgba(38, 54, 25, 0.35);
         }
 
@@ -196,7 +196,7 @@
             }
 
             .gallery {
-                height: calc(50vh - 27px);
+                height: calc(33.333vh - 27px);
             }
 
             .slide {
@@ -240,6 +240,54 @@
 <body>
 
 <div class="page">
+
+    <section class="gallery-section">
+
+        <h1 class="gallery-title">
+            Картины
+        </h1>
+
+        <div class="gallery" id="paintingsGallery">
+
+            <button
+                class="arrow prev"
+                type="button"
+                aria-label="Предыдущая работа"
+            >
+                ‹
+            </button>
+
+            <button
+                class="arrow next"
+                type="button"
+                aria-label="Следующая работа"
+            >
+                ›
+            </button>
+
+            <span class="counter">
+                1 / 3
+            </span>
+
+            <div class="slides">
+
+                <article class="slide active">
+                    <img src="assets/painting-1.webp" alt="Картина">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/painting-2.webp" alt="Картина">
+                </article>
+
+                <article class="slide">
+                    <img src="assets/painting-3.webp" alt="Картина">
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <section class="gallery-section">
 
@@ -443,6 +491,7 @@ function initGallery(galleryId) {
     }, { passive: true });
 }
 
+initGallery("paintingsGallery");
 initGallery("commissionGallery");
 initGallery("studyGallery");
 </script>
